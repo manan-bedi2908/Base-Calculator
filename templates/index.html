@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Base Convertor</title>
+</head>
+
+<body>
+
+	<div class="login-wrap">
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+			<label for="tab-1" class="tab">Convertor</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up">
+			<label for="tab-2" class="tab">Base Calculator</label>
+			<div class="login-form">
+				<form action="/base_convertor" method="POST" name="choice">
+					<div class="sign-in-htm">
+						<div class="group">
+							<label for="user" class="label" name="number">Enter Number</label>
+							<input id="user" type="text" class="input" name="number"> </div>
+						<div class="group">
+							<label for="pass" class="label">From Base</label>
+							<select name="choice_1" id="cars" class="btn btn-primary btn-block">
+                                <option>Select Base of the number entered</option>
+								<option value="2" name="choice_1">2</option>
+								<option value="3" name="choice_1">3</option>
+								<option value="4" name="choice_1">4</option>
+								<option value="5" name="choice_1">5</option>
+								<option value="6" name="choice_1">6</option>
+								<option value="7" name="choice_1">7</option>
+								<option value="8" name="choice_1">8</option>
+								<option value="9" name="choice_1">9</option>
+								<option value="10" name="choice_1">10</option>
+								<option value="11" name="choice_1">11</option>
+								<option value="12" name="choice_1">12</option>
+								<option value="13" name="choice_1">13</option>
+								<option value="14" name="choice_1">14</option>
+								<option value="15" name="choice_1">15</option>
+								<option value="16" name="choice_1">16</option>
+							</select>
+						</div>
+						<div class="group">
+							<label for="pass" class="label">To Base</label>
+							<select name="choice_2" id="cars" class="btn btn-primary btn-block">
+                                <option>Select Base in which you want to convert</option>
+								<option value="2" name="choice_2">2</option>
+								<option value="3" name="choice_2">3</option>
+								<option value="4" name="choice_2">4</option>
+								<option value="5" name="choice_2">5</option>
+								<option value="6" name="choice_2">6</option>
+								<option value="7" name="choice_2">7</option>
+								<option value="8" name="choice_2">8</option>
+								<option value="9" name="choice_2">9</option>
+								<option value="10" name="choice_2">10</option>
+								<option value="11" name="choice_2">11</option>
+								<option value="12" name="choice_2">12</option>
+								<option value="13" name="choice_2">13</option>
+								<option value="14" name="choice_2">14</option>
+								<option value="15" name="choice_2">15</option>
+								<option value="16" name="choice_2">16</option>
+							</select>
+                            <hr style="color: white;">
+                            <div class="group">
+							<button type="submit" class="btn btn-md btn-primary my-5 btn-block" value="{{number}} {{choice_1}} {{choice_2}} }">Submit</button>
+						</div>
+						</div class="group">
+                        <button class="btn btn-warning btn-rounded btn-center m-1 btn-block">Result</button>
+						<textarea class="form-control form-rounded my-4 btn-success align-center text-center" rows="2">{{res}}</textarea>
+
+						<div class="hr"></div>
+					</div>
+				</form>
+
+				<form action="/base_calculator" method="POST">
+					<div class="sign-up-htm">
+						<div class="group">
+							<label for="pass" class="label">Enter Base</label>
+							<select name="base" id="cars" class="btn btn-primary btn-block">
+                                <option>Select Base of the number</option>
+								<option value="2" name="base">2</option>
+								<option value="3" name="base">3</option>
+								<option value="4" name="base">4</option>
+								<option value="5" name="base">5</option>
+								<option value="6" name="base">6</option>
+								<option value="7" name="base">7</option>
+								<option value="8" name="base">8</option>
+								<option value="9" name="base">9</option>
+								<option value="10" name="base">10</option>
+								<option value="11" name="base">11</option>
+								<option value="12" name="base">12</option>
+								<option value="13" name="base">13</option>
+								<option value="14" name="base">14</option>
+								<option value="15" name="base">15</option>
+								<option value="16" name="base">16</option>
+							</select>
+                            <br>
+						<div class="group">
+							<label for="user" class="label" name="first_number">First Number</label>
+							<input id="user" type="text" class="input" name="first_number">
+                        </div>
+                            <div class="group">
+							<label for="pass" class="label">Select Operation</label>
+							<select name="op" id="cars" class="btn btn-primary btn-block">
+                                <option>Select Operation</option>
+								<option value="+" name="op">+</option>
+								<option value="-" name="op">-</option>
+								<option value="*" name="op">*</option>
+							</select>
+                                <br>
+                            <div class="group">
+							<label for="user" class="label" name="second_number">Second Number</label>
+							<input id="user" type="text" class="input" name="second_number">
+                            </div>
+                                </div class="group">
+                            <div class="group">
+							<button type="submit" class="btn btn-md btn-primary my-2 btn-block" value="{{base}} {{first_number}} {{op}} {{second_number}}">Submit</button>
+						</div>
+                        <button class="btn btn-warning btn-rounded btn-center m-2 btn-block">Result</button>
+						<textarea class="form-control form-rounded my-4 btn-success align-center text-center" rows="2">{{res}}</textarea>
+                        </div>
+
+						<div class="hr"></div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <br><br><br><br>
+        <button class="btn btn-info btn-lg" style="width: 550px; margin-left: 36%;">Developed by Manan Bedi <a href="https://github.com/manan-bedi2908/Customer_Churn-Deployment"><i class="fa fa-github" aria-hidden="true"></i></a></button>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
